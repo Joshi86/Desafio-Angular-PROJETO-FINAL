@@ -1,0 +1,212 @@
+<body class="page-anim">
+
+    <header>
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+
+          <a class="navbar-brand" href="">
+            <img src="/pi-logo.png" alt="Logo" width="120px" height="auto" class="d-inline-block align-text-top">
+          </a>
+
+          <a href="/home" class="d-flex align-items-center">
+            <img src="/ford-logo.png" alt="Logo Ford" width="80" height="auto">
+          </a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item mx-3">
+                <a class="nav-link active" aria-current="page" href="">Home</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link" [routerLink]="['/novos']">Novos</a>
+              </li>
+    
+              <li class="nav-item mx-3">
+                <a class="nav-link" [routerLink]="['/usados']">Usados</a>
+              </li>
+
+
+              <li class="nav-item mx-3">
+                <a class="nav-link" [routerLink]="['/pedidos']">Pedidos</a>
+              </li>
+    
+            
+              <li class="nav-item mx-3" *ngIf="!usuarioLogado()">
+                  <a class="nav-link" [routerLink]="['/login']">Login</a>
+              </li>
+
+              <li class="nav-item mx-3" *ngIf="usuarioLogado()">
+                  <a class="nav-link" href="#" (click)="logout()">Log Out</a>
+              </li>
+    
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    
+    </header>
+    
+    <body class="bg-light page-anim">
+    
+        <div class="container py-5">
+          <h1 class="text-center mb-4">Carros Novos à Venda</h1>
+      
+          <div id="carrosCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+          <!-- Card 1 -->
+    
+          <div class="col">
+            <div class="card h-100 shadow">
+              <img src="http://localhost:3001/ford-mach-e.jpg" class="card-img-top" alt="mach-e">
+              <div class="card-body">
+                <h5 class="card-title">FORD MACH-E PREMIUM</h5>
+                <p>
+                  <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                    Vendido por: Prime Imports / FORD
+                  <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                  </span>
+                </p>
+                <p class="card-text">
+                  <strong>📅 Ano:</strong> 2025<br>
+                  <strong>💨 Km:</strong> 0 km<br>
+                  <strong>⛽ Combustível:</strong> Elétrico<br>
+                  <strong>⚙️ Transmissão:</strong> Automática <br>
+                  <strong>🔩 Tração:</strong> 4X4 <br>
+                  <strong>💵 Preço:</strong> R$ 420.000
+                </p>
+                <a href="http://localhost:4200/carro/1FORDMACH-E" class="btn btn-primary">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+
+            <div class="col">
+                <div class="card h-100 shadow">
+                  <img src="http://localhost:3001/mercedes.jpg" class="card-img-top" alt="mercedes">
+                  <div class="card-body">
+                    <h5 class="card-title">Mercedes CLA 250</h5>
+                    <p>
+                      <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                        Vendido por: Prime Imports
+                      <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                      </span>
+                    </p>
+                    <p class="card-text">
+                      <strong>📅 Ano:</strong> 2019<br>
+                      <strong>💨 Km:</strong> 0 km<br>
+                      <strong>⛽ Combustível:</strong> Gasolina<br>
+                      <strong>⚙️ Transmissão:</strong> Automática <br>
+                      <strong>🔩 Tração:</strong> Dianteira <br>
+                      <strong>💵 Preço:</strong> R$ 284.000
+                    </p>
+                    <a href="http://localhost:4200/carro/1MERCEDES" class="btn btn-primary">Ver Detalhes</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card h-100 shadow">
+                  <img src="http://localhost:3001/alfa-romeo.jpg" class="card-img-top" alt="alfa-romeo">
+                  <div class="card-body">
+                    <h5 class="card-title">Alfa Romeo Guilia</h5>
+                    <p>
+                      <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                        Vendido por: Prime Imports
+                      <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                      </span>
+                    </p>
+                    <p class="card-text">
+                      <strong>📅 Ano:</strong> 2025<br>
+                      <strong>💨 Km:</strong> 0 km<br>
+                      <strong>⛽ Combustível:</strong> Gasolina<br>
+                      <strong>⚙️ Transmissão:</strong> Automática <br>
+                      <strong>🔩 Tração:</strong> Dianteira <br>
+                      <strong>💵 Preço:</strong> R$ 290.000
+                    </p>
+                    <a href="http://localhost:4200/carro/1ALFAROMEO" class="btn btn-primary">Ver Detalhes</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card h-100 shadow">
+                  <img src="http://localhost:3001/ford-f150.jpg" class="card-img-top" alt="fordf150">
+                  <div class="card-body">
+                    <h5 class="card-title">FORD F-150 XLT</h5>
+                    <p>
+                      <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                        Vendido por: Prime Imports / FORD
+                      <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                      </span>
+                    </p>
+                    <p class="card-text">
+                      <strong>📅 Ano:</strong> 2025<br>
+                      <strong>💨 Km:</strong> 0 km<br>
+                      <strong>⛽ Combustível:</strong> Gasolina<br>
+                      <strong>⚙️ Transmissão:</strong> Automática <br>
+                      <strong>🔩 Tração:</strong> 4X4 <br>
+                      <strong>💵 Preço:</strong> R$ 284.000
+                    </p>
+                    <a href="http://localhost:4200/carro/1FORDF150" class="btn btn-primary">Ver Detalhes</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card h-100 shadow">
+                  <img src="http://localhost:3001/fordf-250.jpg" class="card-img-top" alt="fordf250">
+                  <div class="card-body">
+                    <h5 class="card-title">FORD F-250 LARIAT</h5>
+                    <p>
+                      <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                        Vendido por: Prime Imports / FORD
+                      <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                      </span>
+                    </p>
+                    <p class="card-text">
+                      <strong>📅 Ano:</strong> 2017<br>
+                      <strong>💨 Km:</strong> 0 km<br>
+                      <strong>⛽ Combustível:</strong> Diesel<br>
+                      <strong>⚙️ Transmissão:</strong> Automática <br>
+                      <strong>🔩 Tração:</strong> 4X4 <br>
+                      <strong>💵 Preço:</strong> R$ 390.000
+                    </p>
+                    <a href="http://localhost:4200/carro/1FORDF250" class="btn btn-primary">Ver Detalhes</a>
+                  </div>
+                </div>
+              </div>
+
+               <div class="col">
+                <div class="card h-100 shadow">
+                  <img src="http://localhost:3001/ford-bronco.jpg" class="card-img-top" alt="fordbronco">
+                  <div class="card-body">
+                    <h5 class="card-title">FORD BRONCO OUTER BANKS</h5>
+                    <p>
+                      <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                        Vendido por: Prime Imports / FORD
+                      <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                      </span>
+                    </p>
+                    <p class="card-text">
+                      <strong>📅 Ano:</strong> 2023<br>
+                      <strong>💨 Km:</strong> 0 km<br>
+                      <strong>⛽ Combustível:</strong> Gasolina<br>
+                      <strong>⚙️ Transmissão:</strong> Automática <br>
+                      <strong>🔩 Tração:</strong> 4X4 <br>
+                      <strong>💵 Preço:</strong> R$ 270.000
+                    </p>
+                    <a href="http://localhost:4200/carro/1FORDBRONCO" class="btn btn-primary">Ver Detalhes</a>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      
+    <body> 

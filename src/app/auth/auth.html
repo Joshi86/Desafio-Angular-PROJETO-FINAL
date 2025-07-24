@@ -1,0 +1,27 @@
+<div class="container my-5">
+  <ul class="nav nav-tabs mb-3">
+    <li class="nav-item">
+      <button class="nav-link" [class.active]="aba === 'login'" (click)="aba = 'login'">Login</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" [class.active]="aba === 'cadastro'" (click)="aba = 'cadastro'">Cadastro</button>
+    </li>
+  </ul>
+
+  <form *ngIf="aba === 'login'" (ngSubmit)="login()" class="p-3 border rounded bg-light">
+    <h4>Login</h4>
+    <input [(ngModel)]="nome" name="nome" class="form-control my-2" placeholder="Nome" required>
+    <input [(ngModel)]="senha" name="senha" class="form-control my-2" placeholder="Senha" type="password" required>
+    <button class="btn btn-primary mt-2">Entrar</button>
+    <p *ngIf="erroLogin" class="text-danger mt-2">{{ erroLogin }}</p>
+  </form>
+
+  <form *ngIf="aba === 'cadastro'" (ngSubmit)="cadastrar()" class="p-3 border rounded bg-light">
+    <h4>Cadastro</h4>
+    <input [(ngModel)]="nome" name="nomeCad" class="form-control my-2" placeholder="Nome" required>
+    <input [(ngModel)]="senha" name="senhaCad" class="form-control my-2" placeholder="Senha" type="password" required>
+    <button class="btn btn-success mt-2">Cadastrar</button>
+    <p *ngIf="mensagem" class="text-success mt-2">{{ mensagem }}</p>
+    <p *ngIf="erroCadastro" class="text-danger mt-2">{{ erroCadastro }}</p>
+  </form>
+</div>

@@ -1,0 +1,47 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Container flexível */
+.wrapper {
+  min-height: 25vh; /* altura mínima: 100% da viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Área principal flexível */
+.content {
+  flex: 1; /* ocupa todo o espaço restante */
+  padding: 10px;
+}
+
+/* Rodapé fixo no fim da página */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+  .page-anim {
+    animation: fadeInPage 1s ease-in-out;
+  }
+
+  
+  @keyframes fadeInPage {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

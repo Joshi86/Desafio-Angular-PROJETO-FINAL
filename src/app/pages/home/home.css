@@ -1,0 +1,106 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+.navbar-nav {
+    margin: 0 auto;
+  }
+
+  .navbar .nav-link {
+    color: rgb(0, 0, 0) !important;  
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);      
+    padding: 13px 35px;              
+    border-radius: 10px;             
+    margin: 0 6px;                  
+    transition: 0.3s;
+    display: inline-block;
+    
+  }
+  
+  .navbar .nav-link:hover {
+    background-color: #e2e2e1;
+    color: #000 !important;
+  }
+
+  .welcome-card {
+    background: linear-gradient(135deg, #f8f9fa, #e2e6ea);
+    border-radius: 16px;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  .ad-destaque {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-left: 6px solid #c00;
+    animation: entradaSuave 1s ease;
+  }
+
+  h1.text-center {
+    font-family: 'Segoe UI', 'Open Sans', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1d1b14; 
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-bottom: 3px solid #1d1b14;
+    margin-bottom: 2rem;
+  }
+  
+  .car-slide {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .car-nome {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  
+  .car-info {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .car-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+   .card:hover {
+      filter: brightness(75%);
+      transition: filter 0.3s ease;
+      cursor: pointer;
+  }  
+
+  .page-anim {
+    animation: fadeInPage 1s ease-in-out;
+  }
+  
+  @keyframes fadeInPage {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+@keyframes entradaSuave {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

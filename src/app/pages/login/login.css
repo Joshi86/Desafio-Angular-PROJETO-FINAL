@@ -1,0 +1,34 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+.navbar-nav {
+    margin: 0 auto;
+  }
+
+  .navbar .nav-link {
+    color: rgb(0, 0, 0) !important;  
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);      
+    padding: 13px 35px;              
+    border-radius: 10px;             
+    margin: 0 6px;                  
+    transition: 0.3s;
+    display: inline-block;
+  }
+
+     .page-anim {
+      animation: fadeInPage 1s ease-in-out;
+    }
+    
+    @keyframes fadeInPage {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }

@@ -1,0 +1,243 @@
+<body class="page-anim">
+
+<header>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="">
+        <img src="/pi-logo.png" alt="Logo" width="120px" height="auto" class="d-inline-block align-text-top">
+      </a>
+
+      <a href="/home" class="d-flex align-items-center">
+        <img src="/ford-logo.png" alt="Logo Ford" width="80" height="auto">
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-3">
+            <a class="nav-link active" aria-current="page" href="">Home</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" [routerLink]="['/novos']">Novos</a>
+          </li>
+
+          <li class="nav-item mx-3">
+            <a class="nav-link" [routerLink]="['/usados']">Usados</a>
+          </li>
+
+          <li class="nav-item mx-3">
+            <a class="nav-link" [routerLink]="['/pedidos']">Pedidos</a>
+          </li>
+
+          <li class="nav-item mx-3">
+            <a class="nav-link" [routerLink]="['/login']" *ngIf="!usuarioLogado()">Login</a>
+            <a class="nav-link" href="#" (click)="logout()" *ngIf="usuarioLogado()">Log Out</a>
+          </li>
+    
+
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+
+    <div class="container py-5">
+      <h1 class="text-center mb-4">Carros Usados à Venda</h1>
+  
+      <div id="carrosCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <!-- Card 1 -->
+
+       <div class="col">
+          <div class="card h-100 shadow">
+            <img src="http://localhost:3001/corvette.jpg" class="card-img-top" alt="Corvette">
+            <div class="card-body">
+              <h5 class="card-title">Corvette C6 Z06 2005</h5>
+              <p>
+                <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                  Vendido por: Victor
+                <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                </span>
+              </p>
+              <p class="card-text">
+                <strong>📅 Ano:</strong> 2005<br>
+                <strong>💨 Km:</strong> 258.763 km<br>
+                <strong>⛽ Combustível:</strong> Gasolina<br>
+                <strong>⚙️ Transmissão:</strong> Manual<br>
+                <strong>🔩 Tração:</strong> Traseira<br>
+                <strong>💵 Preço:</strong> R$ 103.202 
+              </p>
+              <a href="http://localhost:4200/carro/1CHEVROLETZ06CORVETTE" class="btn btn-primary">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        
+              <div class="col">
+                <div class="card h-100 shadow">
+                  <img src="http://localhost:3001/pontiac.jpg" class="card-img-top" alt="Pontiac">
+                  <div class="card-body">
+                    <h5 class="card-title">Pontiac GTO 2004</h5>
+                    <p>
+                      <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                        Vendido por: Matheus
+                      <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                      </span>
+                    </p>
+                    <p class="card-text">
+                      <strong>📅 Ano:</strong> 2004<br>
+                      <strong>💨 Km:</strong> 285.400 km<br>
+                      <strong>⛽ Combustível:</strong> Gasolina<br>
+                      <strong>⚙️ Transmissão:</strong> Manual<br>
+                      <strong>🔩 Tração:</strong> Traseira<br>
+                      <strong>💵 Preço:</strong> R$ 95.900 
+                    </p>
+                    <a href="http://localhost:4200/carro/1PONTIACGTO" class="btn btn-primary">Ver Detalhes</a>
+                  </div>
+                </div>
+              </div>
+
+        <!-- Card 3 -->
+
+        <div class="col">
+            <div class="card h-100 shadow">
+              <img src="http://localhost:3001/ford-victoria.jpg" class="card-img-top" alt="Crown-Victoria">
+              <div class="card-body">
+                <h5 class="card-title">Ford Crown Victoria LX 2000</h5>
+                <p>
+                  <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                    Vendido por: Edu
+                  <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                  </span>
+                </p>
+                <p class="card-text">
+                  <strong>📅 Ano:</strong> 2000<br>
+                  <strong>💨 Km:</strong> 322.652 km<br>
+                  <strong>⛽ Combustível:</strong> Gasolina<br>
+                  <strong>⚙️ Transmissão:</strong> Manual<br>
+                  <strong>🔩 Tração:</strong> Traseira<br>
+                  <strong>💵 Preço:</strong> R$ 28.900 
+                </p>
+                <a href="http://localhost:4200/carro/1FORDCVICTORIA" class="btn btn-primary">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+
+             <!-- Card 4 -->
+
+        <div class="col">
+          <div class="card h-100 shadow">
+            <img src="http://localhost:3001/mazda-rx7.jpg" class="card-img-top" alt="rx7">
+            <div class="card-body">
+              <h5 class="card-title">Mazda Rx-7 Touring</h5>
+              <p>
+                <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                  Vendido por: Chie
+                <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                </span>
+              </p>
+              <p class="card-text">
+                <strong>📅 Ano:</strong> 1993<br>
+                <strong>💨 Km:</strong> 125.286 km<br>
+                <strong>⛽ Combustível:</strong> Gasolina<br>
+                <strong>⚙️ Transmissão:</strong> Manual<br>
+                <strong>🔩 Tração:</strong> Traseira<br>
+                <strong>💵 Preço:</strong> R$ 230.599
+              </p>
+              <a href="http://localhost:4200/carro/1MAZDA-RX7" class="btn btn-primary">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+
+         <div class="col">
+          <div class="card h-100 shadow">
+            <img src="http://localhost:3001/volkswagen-golf.jpg" class="card-img-top" alt="golf">
+            <div class="card-body">
+              <h5 class="card-title">Volkswagen Golf S</h5>
+              <p>
+                <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                  Vendido por: Kuru
+                <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                </span>
+              </p>
+              <p class="card-text">
+                <strong>📅 Ano:</strong> 2017<br>
+                <strong>💨 Km:</strong> 245.286 km<br>
+                <strong>⛽ Combustível:</strong> Gasolina<br>
+                <strong>⚙️ Transmissão:</strong> Manual<br>
+                <strong>🔩 Tração:</strong> Dianteira<br>
+                <strong>💵 Preço:</strong> R$ 38.695
+              </p>
+              <a href="http://localhost:4200/carro/1VOLKSWAGEN-GOLF" class="btn btn-primary">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow">
+            <img src="http://localhost:3001/porsche-cayman.jpg" class="card-img-top" alt="porsche">
+            <div class="card-body">
+              <h5 class="card-title">Porsche Cayman S</h5>
+              <p>
+                <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                  Vendido por: Paulo
+                <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                </span>
+              </p>
+              <p class="card-text">
+                <strong>📅 Ano:</strong> 2006<br>
+                <strong>💨 Km:</strong> 81.732 km<br>
+                <strong>⛽ Combustível:</strong> Gasolina<br>
+                <strong>⚙️ Transmissão:</strong> Automática<br>
+                <strong>🔩 Tração:</strong> Traseira<br>
+                <strong>💵 Preço:</strong> R$ 115.220
+              </p>
+              <a href="http://localhost:4200/carro/1PORSCHE-CAYMAN" class="btn btn-primary">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow">
+            <img src="http://localhost:3001/dodge-challenger.jpg" class="card-img-top" alt="porsche">
+            <div class="card-body">
+              <h5 class="card-title">Dodge Challenger SRT8</h5>
+              <p>
+                <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                  Vendido por: Gusdu
+                <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                </span>
+              </p>
+              <p class="card-text">
+                <strong>📅 Ano:</strong> 2009<br>
+                <strong>💨 Km:</strong> 111.358 km<br>
+                <strong>⛽ Combustível:</strong> Gasolina<br>
+                <strong>⚙️ Transmissão:</strong> Manual<br>
+                <strong>🔩 Tração:</strong> Traseira<br>
+                <strong>💵 Preço:</strong> R$ 125.500
+              </p>
+              <a href="http://localhost:4200/carro/1DODGE-CHALLENGER" class="btn btn-primary">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <br>
+
+
+</div>
+  
+<body> 

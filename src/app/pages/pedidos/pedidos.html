@@ -1,0 +1,80 @@
+<body class="page-anim">
+
+<header>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand" href="">
+        <img src="/pi-logo.png" alt="Logo" width="100px" height="auto" class="d-inline-block align-text-top">
+      </a>
+
+      <a href="/home" class="d-flex align-items-center">
+        <img src="/ford-logo.png" alt="Logo Ford" width="80" height="auto">
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          <li class="nav-item mx-3">
+           <a class="nav-link active" aria-current="page" href="">Home</a>
+          </li>
+          <li class="nav-item mx-3">
+           <a class="nav-link" [routerLink]="['/novos']">Novos</a>
+          </li>
+
+          <li class="nav-item mx-3">
+           <a class="nav-link" [routerLink]="['/usados']">Usados</a>
+          </li>
+
+          <li class="nav-item mx-3">
+           <a class="nav-link" [routerLink]="['/pedidos']">Pedidos</a>
+          </li>
+
+          <li class="nav-item mx-3">
+           <a class="nav-link" [routerLink]="['/login']" *ngIf="!usuarioLogado()">Login</a>
+           <a class="nav-link" href="#" (click)="logout()" *ngIf="usuarioLogado()">Log Out</a>
+          </li>
+    
+        </ul>
+    
+      </div>
+    </div>
+  </nav>
+
+   <h1 class="text-center mb-4">Seus Pedidos</h1>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Veículo</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Mensagem</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pedido of pedidos">
+        <td>{{ pedido.carroNome }}</td>
+        <td>{{ pedido.nome }}</td>
+        <td>{{ pedido.email }}</td>
+        <td>{{ pedido.telefone }}</td>
+        <td>{{ pedido.mensagem }}</td>
+        <td>{{ pedido.status }}</td>
+        <td>
+          ...
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  <br><br><br>

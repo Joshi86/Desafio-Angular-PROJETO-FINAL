@@ -1,0 +1,72 @@
+[debug] [2025-07-22T14:38:53.893Z] ----------------------------------------------------------------------
+[debug] [2025-07-22T14:38:53.897Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\232.999976\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:create meu-projeto-angular
+[debug] [2025-07-22T14:38:53.897Z] CLI Version:   14.11.0
+[debug] [2025-07-22T14:38:53.897Z] Platform:      win32
+[debug] [2025-07-22T14:38:53.898Z] Node Version:  v22.16.0
+[debug] [2025-07-22T14:38:53.898Z] Time:          Tue Jul 22 2025 11:38:53 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2025-07-22T14:38:53.898Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-22T14:38:53.906Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-22T14:38:53.906Z] > authorizing via signed-in user (josiel.m.santana@ba.estudante.senai.br)
+[debug] [2025-07-22T14:39:09.720Z] Checked if tokens are valid: true, expires at: 1753198457191
+[debug] [2025-07-22T14:39:09.721Z] Checked if tokens are valid: true, expires at: 1753198457191
+[debug] [2025-07-22T14:39:09.724Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2025-07-22T14:39:09.724Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"meu-projeto-angular","name":"Prime Imports"}
+[debug] [2025-07-22T14:39:10.919Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 409
+[debug] [2025-07-22T14:39:10.919Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":409,"message":"Requested entity already exists","status":"ALREADY_EXISTS"}}
+[debug] [2025-07-22T14:39:11.162Z] FirebaseError: Request to https://cloudresourcemanager.googleapis.com/v1/projects had HTTP Error: 409, Requested entity already exists
+    at responseToError (C:\Users\232.999976\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:52:12)
+    at RetryOperation._fn (C:\Users\232.999976\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to create project because there is already a project with ID meu-projeto-angular. Please try again with a unique project ID.
+[debug] [2025-07-22T14:39:33.113Z] ----------------------------------------------------------------------
+[debug] [2025-07-22T14:39:33.116Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\232.999976\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:create prime-imports-ford-enter
+[debug] [2025-07-22T14:39:33.117Z] CLI Version:   14.11.0
+[debug] [2025-07-22T14:39:33.117Z] Platform:      win32
+[debug] [2025-07-22T14:39:33.117Z] Node Version:  v22.16.0
+[debug] [2025-07-22T14:39:33.117Z] Time:          Tue Jul 22 2025 11:39:33 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2025-07-22T14:39:33.118Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-22T14:39:33.124Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-22T14:39:33.125Z] > authorizing via signed-in user (josiel.m.santana@ba.estudante.senai.br)
+[debug] [2025-07-22T14:39:39.212Z] Checked if tokens are valid: true, expires at: 1753198457191
+[debug] [2025-07-22T14:39:39.212Z] Checked if tokens are valid: true, expires at: 1753198457191
+[debug] [2025-07-22T14:39:39.214Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2025-07-22T14:39:39.214Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"prime-imports-ford-enter","name":" Prime Imports"}
+[debug] [2025-07-22T14:39:39.829Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 200
+[debug] [2025-07-22T14:39:39.829Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"name":"operations/create_project.global.8543481801488730159"}
+[debug] [2025-07-22T14:39:39.830Z] Checked if tokens are valid: true, expires at: 1753198457191
+[debug] [2025-07-22T14:39:39.831Z] Checked if tokens are valid: true, expires at: 1753198457191
+[debug] [2025-07-22T14:39:39.831Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.8543481801488730159 [none]
+[debug] [2025-07-22T14:39:40.672Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.8543481801488730159 200
+[debug] [2025-07-22T14:39:40.672Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.8543481801488730159 {"name":"operations/create_project.global.8543481801488730159","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","ready":true},"done":true,"error":{"code":7,"message":"No permission to create project in organization"}}
+[debug] [2025-07-22T14:39:40.873Z] FirebaseError: No permission to create project in organization
+    at OperationPoller.poll (C:\Users\232.999976\AppData\Roaming\npm\node_modules\firebase-tools\lib\operation-poller.js:24:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async createCloudProject (C:\Users\232.999976\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:215:29)
+    at async createFirebaseProjectAndLog (C:\Users\232.999976\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:83:9)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
+[debug] [2025-07-22T14:40:28.101Z] ----------------------------------------------------------------------
+[debug] [2025-07-22T14:40:28.105Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\232.999976\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:create prime-imports-ford-enter3333536
+[debug] [2025-07-22T14:40:28.106Z] CLI Version:   14.11.0
+[debug] [2025-07-22T14:40:28.106Z] Platform:      win32
+[debug] [2025-07-22T14:40:28.106Z] Node Version:  v22.16.0
+[debug] [2025-07-22T14:40:28.106Z] Time:          Tue Jul 22 2025 11:40:28 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2025-07-22T14:40:28.106Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-22T14:40:28.113Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-22T14:40:28.114Z] > authorizing via signed-in user (josiel.m.santana@ba.estudante.senai.br)
+[debug] [2025-07-22T14:40:33.868Z] Checked if tokens are valid: true, expires at: 1753198457191
+[debug] [2025-07-22T14:40:33.869Z] Checked if tokens are valid: true, expires at: 1753198457191
+[debug] [2025-07-22T14:40:33.872Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2025-07-22T14:40:33.872Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"prime-imports-ford-enter3333536","name":"PrimeImports033356"}
+[debug] [2025-07-22T14:40:34.933Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 400
+[debug] [2025-07-22T14:40:34.933Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":400,"message":"field [project_id] has issue [project_id must be at most 30 characters long]","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"project_id must be at most 30 characters long"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2025-07-22T14:40:35.151Z] FirebaseError: Request to https://cloudresourcemanager.googleapis.com/v1/projects had HTTP Error: 400, field [project_id] has issue [project_id must be at most 30 characters long]
+    at responseToError (C:\Users\232.999976\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:52:12)
+    at RetryOperation._fn (C:\Users\232.999976\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.

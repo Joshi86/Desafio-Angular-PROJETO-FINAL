@@ -1,0 +1,183 @@
+<body class="page-anim">
+
+<header>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand" href="">
+        <img src="/pi-logo.png" alt="Logo" width="100px" height="auto" class="d-inline-block align-text-top">
+      </a>
+
+      <a href="/home" class="d-flex align-items-center">
+        <img src="/ford-logo.png" alt="Logo Ford" width="80" height="auto">
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          <li class="nav-item mx-3">
+           <a class="nav-link active" aria-current="page" href="">Home</a>
+          </li>
+          <li class="nav-item mx-3">
+           <a class="nav-link" [routerLink]="['/novos']">Novos</a>
+          </li>
+
+          <li class="nav-item mx-3">
+           <a class="nav-link" [routerLink]="['/usados']">Usados</a>
+          </li>
+
+          <li class="nav-item mx-3">
+           <a class="nav-link" [routerLink]="['/pedidos']">Pedidos</a>
+          </li>
+
+          <li class="nav-item mx-3">
+           <a class="nav-link" [routerLink]="['/login']" *ngIf="!usuarioLogado()">Login</a>
+           <a class="nav-link" href="#" (click)="logout()" *ngIf="usuarioLogado()">Log Out</a>
+          </li>
+    
+        </ul>
+    
+      </div>
+    </div>
+  </nav>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom"></nav>
+</header>
+
+<div class="container mt-4">
+  <div class="card shadow-lg p-4 text-center welcome-card">
+    <h2 class="mb-3">👋 Bem-vindo à Prime Imports</h2>
+    <p class="lead">Em parceria com a <strong>Ford</strong>, trazemos para você uma seleção especial de veículos novos com garantia de qualidade e procedência. Também temos uma seleção de veículos usados, revisados, enviados por usuários, como você. </p>
+    <a href="/novos" class="btn btn-primary mt-3">Ver Estoque</a>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row align-items-center shadow-lg p-4 rounded bg-light ad-destaque">
+    <div class="col-md-6 text-center">
+      <a href="http://localhost:4200/carro/1FORDMACH-E">
+      <img src="https://desafio-angular-projeto-api.onrender.com/ford-mach-e.jpg" alt="Ford-Mach" class="img-fluid rounded">
+      </a>
+    </div>
+    <div class="col-md-6">
+      <h2 class="mb-3">🚗 Novo Mustang Mach-E Premium 2025</h2>
+      <p class="lead">Experimente o futuro do automobilismo com o Ford Mustang Mach-E Premium 2025: Onde a inovação encontra a elegância. Entre no futuro com o Ford Mustang Mach-E Premium 2025, uma obra-prima da engenharia e do design modernos que redefine a direção elétrica.</p>
+      <ul class="list-unstyled">
+        <li><strong>📅 Ano:</strong> 2025</li>
+        <li><strong>💨 Km:</strong> 0 km</li>
+        <li><strong>⛽ Combustível:</strong> Elétrico</li>
+        <li><strong>⚙️ Transmissão:</strong> Automática</li>
+        <li><strong>🔩 Tração:</strong> 4X4</li>
+        <li><strong>💵 Preço:</strong> R$ 420.000</li>
+      </ul>
+      <a href="http://localhost:4200/carro/1FORDMACH-E" class="btn btn-danger btn-lg mt-3">Garanta o seu agora</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container my-5">
+  <div class="row align-items-center shadow-lg p-4 rounded bg-light ad-destaque">
+    <div class="col-md-6 text-center">
+      <a href="http://localhost:4200/carro/1ALFAROMEO">
+      <img src="http://localhost:3001/alfa-romeo.jpg" alt="Alfa Romeo Giulia" class="img-fluid rounded">
+      </a>
+    </div>
+    <div class="col-md-6">
+      <h2 class="mb-3">🚗 Novo Alfa Romeo Giulia 2025</h2>
+      <p class="lead">Disponível o novo Alfa Romeo Giulia: Elegância, desempenho e tecnologia em um só carro. O futuro chegou para quem exige o melhor.</p>
+      <ul class="list-unstyled">
+        <li><strong>📅 Ano:</strong> 2025</li>
+        <li><strong>💨 Km:</strong> 0 km</li>
+        <li><strong>⛽ Combustível:</strong> Gasolina</li>
+        <li><strong>⚙️ Transmissão:</strong> Automática</li>
+        <li><strong>🔩 Tração:</strong> Dianteira</li>
+        <li><strong>💵 Preço:</strong> R$ 290.000</li>
+      </ul>
+      <a href="http://localhost:4200/carro/1ALFAROMEO" class="btn btn-danger btn-lg mt-3">Garanta o seu agora</a>
+    </div>
+  </div>
+</div>
+
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">Confira nossos novos destaques da Semana</h1>
+    
+      <div id="carrosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+    
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <div class="car-slide" style="background-image: url(http://localhost:3001/corvette.jpg);">
+              <div class="car-info">
+                <p class="car-nome">Corvette C6 Z06 2005</p>
+                <p>
+                  <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                    Por: Victor 
+                  <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                  </span>
+                </p>
+                <p>💨 258.763 km</p>
+                <h3>💵 R$ 103.202 R$</h3>
+                <br>
+                <a href="http://localhost:4200/carro/1CHEVROLETZ06CORVETTE" class="btn btn-primary">Ver Detalhes</a>
+              </div> 
+            </div>
+          </div>
+    
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="car-slide" style="background-image: url(http://localhost:3001/ford-victoria.jpg);">
+              <div class="car-info">
+                <p class="car-nome">Ford Crown Victoria 2000</p>
+                <p>
+                  <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                    Por: Edu
+                  <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                  </span>
+                </p>
+                <p>💨 322.652 km</p>
+                <h3>💵 R$ 28.900 R$</h3>
+                <br>
+                <a href="http://localhost:4200/carro/1FORDCVICTORIA" class="btn btn-primary">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div class="car-slide" style="background-image: url(http://localhost:3001/pontiac.jpg);">
+              <div class="car-info">
+                <p class="car-nome">Pontiac GTO 2004</p>
+                <p>
+                  <span class="badge bg-secondary d-inline-flex align-items-center gap-1">
+                    Por: Matheus 
+                  <img src="http://localhost:3001/verified.png" alt="verified" class="rounded-circle" width="22" height="22">
+                  </span>
+                </p>
+                <p>💨 285.400 km</p>
+                <h3>💵 R$ 95.900 R$</h3>
+                <br>
+                <a href="http://localhost:4200/carro/1PONTIACGTO" class="btn btn-primary">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+    
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrosCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrosCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <br><br>
+
+<body>

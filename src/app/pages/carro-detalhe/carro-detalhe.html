@@ -1,0 +1,239 @@
+<body class="page-anim">
+
+<header>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="">
+        <img src="/pi-logo.png" alt="Logo" width="120px" height="auto" class="d-inline-block align-text-top">
+      </a>
+
+      <a href="/home" class="d-flex align-items-center">
+        <img src="/ford-logo.png" alt="Logo Ford" width="80" height="auto">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-3">
+            <a class="nav-link active" aria-current="page" href="">Home</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" [routerLink]="['/novos']">Novos</a>
+          </li>
+
+          <li class="nav-item mx-3">
+           <a class="nav-link" [routerLink]="['/usados']">Usados</a>
+          </li>
+
+          <li class="nav-item mx-3">
+            <a class="nav-link" [routerLink]="['/pedidos']">Pedidos</a>
+          </li>
+
+          <li class="nav-item mx-3">
+            <a class="nav-link" [routerLink]="['/login']" *ngIf="!usuarioLogado()">Login</a>
+            <a class="nav-link" href="#" (click)="logout()" *ngIf="usuarioLogado()">Log Out</a>
+          </li>
+    
+
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+<div class="container py-5" *ngIf="carro">
+  <h1 class="titulo-carro text-center">{{ carro.carro1 }}</h1>
+
+  <!-- Carrossel -->
+  <div class="row g-4 align-items-stretch">
+    <!-- Carrossel do carro -->
+    <div class="col-md-6">
+      <div class="h-100">
+        <div id="carouselCarro" class="carousel slide h-100" data-bs-ride="carousel">
+          <div class="carousel-inner h-100">
+            <div
+              class="carousel-item h-100"
+              *ngFor="let img of carro.imagens; let i = index"
+              [class.active]="i === 0"
+            >
+              <img
+                [src]="img"
+                class="d-block w-100 h-100"
+                style="object-fit: cover; border-radius: 10px;"
+              />
+            </div>
+          </div>
+  
+          <!-- Botões de navegação -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselCarro" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselCarro" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Próximo</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Card de especificações -->
+    <div class="col-md-6">
+      <div class="card shadow p-4 h-100">
+        <h3 class="text-center">Especificações</h3>
+        <br>
+        <p class="preco"><strong>💵 R$ {{ carro.preco }}</strong> </p>
+        <p><strong>📅 Ano:</strong> {{ carro.ano }}</p>
+        <p><strong>⛽ Combustível:</strong> {{ carro.combustivel }}</p>
+        <p><strong>⚙️ Transmissão:</strong> {{ carro.transmissao }}</p>
+        <p><strong>🔩 Tração:</strong> {{ carro.tracao }}</p>
+        <p><strong>🛠️ Motor:</strong> {{ carro.motor }}</p>
+        <p><strong>🎨 Cor:</strong> {{ carro.cor }}</p>
+        <p><strong>✅ Sem acidentes ou danos Reportados</strong></p>
+      </div>
+    </div>
+  </div>
+  
+  <br><br>
+
+    <!-- Coluna do formulário -->
+  <div class="row justify-content-center"> 
+    <div class="col-md-6">
+      <div class="card shadow p-4 text-center">
+        <h4 class="mb-4">Deseja este carro?</h4>
+  
+        <form #pedidoForm="ngForm" (ngSubmit)="enviarPedido(pedidoForm)" novalidate>
+  
+          <div class="mb-3">
+            <input
+              type="text"
+              name="nome"
+              class="form-control"
+              placeholder="Nome*"
+              [(ngModel)]="formData.nome"
+              required
+              pattern="^[A-Za-zÀ-ÿ\s]+$"
+              #nome="ngModel"
+            />
+          
+          <div *ngIf="nome.invalid && nome.touched" class="text-danger mt-1">
+           Nome inválido: use apenas letras.
+          </div>
+
+
+          </div>
+          
+          <!-- E-mail -->
+          <div class="mb-3">
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              placeholder="E-mail*"
+              [(ngModel)]="formData.email"
+              required
+              pattern="^[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+$"
+              #email="ngModel"
+            />
+
+          <div *ngIf="email.invalid && email.touched" class="text-danger mt-1">
+              E-mail inválido.
+          </div>
+          
+          </div>
+
+          
+          <!-- Telefone -->
+          <div class="mb-3">
+            <input
+              type="text"
+              name="telefone"
+              class="form-control"
+              placeholder="Telefone*"
+              [(ngModel)]="formData.telefone"
+              required
+              pattern="^[0-9]+$"
+              maxlength="15"
+              #telefone="ngModel"
+            />
+
+            <div *ngIf="telefone.invalid && telefone.touched" class="text-danger mt-1">
+              Telefone inválido: use apenas números.
+            </div>
+
+          </div>
+          
+          <!-- Mensagem -->
+          <div class="mb-3">
+            <textarea
+              class="form-control"
+              name="mensagem"
+              rows="3"
+              placeholder="Mensagem (opcional)"
+              [(ngModel)]="formData.mensagem"
+            ></textarea>
+          </div>
+  
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="formData.aceitoTermos" name="aceitoTermos" required/>
+            <label class="form-check-label">
+              Li e concordo com os 
+              <a href="https://www.gov.br/mdh/pt-br/acesso-a-informacao/politica-de-privacidade" target="_blank">
+                termos de uso
+              </a>
+                e com a
+              <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank">
+                LGPD
+              </a>.
+            </label>
+
+          </div>
+  
+          <button type="submit" class="btn btn-success w-100" [disabled]="!pedidoForm.form.valid">
+            Pedir este carro
+          </button>
+  
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <div class="card shadow p-4 h-100"
+           [class.bg-secondary]="formEnviado" 
+           [class.text-white]="formEnviado" 
+           [class.opacity-75]="formEnviado"
+           [style.pointer-events]="formEnviado ? 'none' : 'auto'">
+    
+        <h4 class="mb-4">Status do Carro:</h4>
+    
+        <form *ngIf="!formEnviado" #pedidoForm="ngForm" (ngSubmit)="enviarPedido(pedidoForm)" novalidate>
+          <!-- seus inputs -->
+        </form>
+    
+        <div *ngIf="formEnviado" class="text-center mt-4">
+          <h5 class="text-white">✅ Pedido enviado!</h5>
+          <p class="text-white">Entraremos em contato em breve.</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Botão de voltar -->
+  <div class="mt-4 text-center">
+    <a routerLink="/novos" class="btn btn-secondary">Voltar para listagem</a>
+  </div>
+
+  <br>
+
+</body>
